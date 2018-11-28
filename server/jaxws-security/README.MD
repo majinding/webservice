@@ -1,4 +1,4 @@
-ws-client
+ws-server
 
 采用`jaxws`的`handler`来增加`security`校验
 
