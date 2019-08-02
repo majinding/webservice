@@ -14,4 +14,7 @@ public interface Hello {
     @WebResult()
     @WebMethod()
     String name(@WebParam(name = "name") String name);
+
+    @WebMethod()
+    Dto namedto(Dto dto);
 }
