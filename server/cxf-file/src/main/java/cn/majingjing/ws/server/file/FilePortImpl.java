@@ -16,6 +16,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -29,7 +30,39 @@ import java.util.UUID;
 public class FilePortImpl {
 
     private static Logger log = LoggerFactory.getLogger(FilePortImpl.class);
+    /**
+     * 文件上传
+     *
+     * @param tmFileBeans 文件上传包装类
+     * @return 上传成功返回true，上传失败返回false。
+     */
+    public String multiUpload(@WebParam(name = "tmFileBeans") List<TmFileBean> tmFileBeans) {
 
+        InputStream is = null;
+        try {
+            StringBuilder rtns = new StringBuilder();
+            for (TmFileBean tmFileBean : tmFileBeans) {
+                log.info("upload... {}",tmFileBean.getFileName());
+                tmFileBean.getFile().writeTo(new FileOutputStream("/Users/apple/Documents/works/git/oschina/webservice/server/cxf-file/target/"+ UUID.randomUUID().toString()+tmFileBean.getFileName()));
+                String rtn = Tools.toStrings("文件上传成功，文件名：{}", tmFileBean.getFileName());
+                rtns.append(rtn).append("\n");
+            }
+
+            log.debug(rtns.toString());
+            return rtns.toString();
+        } catch (Exception e) {
+            log.error("上传文件失败", e);
+        } finally {
+            if (is != null) {
+                try {
+                    is.close();
+                } catch (Exception e) {
+                }
+            }
+        }
+
+        return "文件上传失败，请联系管理员。";
+    }
     /**
      * 文件上传
      *

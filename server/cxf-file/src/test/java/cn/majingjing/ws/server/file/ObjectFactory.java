@@ -24,7 +24,9 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _MultiUploadResponse_QNAME = new QName("http://file.server.ws.majingjing.cn/", "multiUploadResponse");
     private final static QName _Download_QNAME = new QName("http://file.server.ws.majingjing.cn/", "download");
+    private final static QName _MultiUpload_QNAME = new QName("http://file.server.ws.majingjing.cn/", "multiUpload");
     private final static QName _Upload_QNAME = new QName("http://file.server.ws.majingjing.cn/", "upload");
     private final static QName _DownloadResponse_QNAME = new QName("http://file.server.ws.majingjing.cn/", "downloadResponse");
     private final static QName _UploadResponse_QNAME = new QName("http://file.server.ws.majingjing.cn/", "uploadResponse");
@@ -37,11 +39,27 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link MultiUploadResponse }
+     * 
+     */
+    public MultiUploadResponse createMultiUploadResponse() {
+        return new MultiUploadResponse();
+    }
+
+    /**
      * Create an instance of {@link Download }
      * 
      */
     public Download createDownload() {
         return new Download();
+    }
+
+    /**
+     * Create an instance of {@link MultiUpload }
+     * 
+     */
+    public MultiUpload createMultiUpload() {
+        return new MultiUpload();
     }
 
     /**
@@ -77,12 +95,30 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link MultiUploadResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://file.server.ws.majingjing.cn/", name = "multiUploadResponse")
+    public JAXBElement<MultiUploadResponse> createMultiUploadResponse(MultiUploadResponse value) {
+        return new JAXBElement<MultiUploadResponse>(_MultiUploadResponse_QNAME, MultiUploadResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Download }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://file.server.ws.majingjing.cn/", name = "download")
     public JAXBElement<Download> createDownload(Download value) {
         return new JAXBElement<Download>(_Download_QNAME, Download.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link MultiUpload }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://file.server.ws.majingjing.cn/", name = "multiUpload")
+    public JAXBElement<MultiUpload> createMultiUpload(MultiUpload value) {
+        return new JAXBElement<MultiUpload>(_MultiUpload_QNAME, MultiUpload.class, null, value);
     }
 
     /**

@@ -8,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>downloadResponse complex typeµÄ Java Àà¡£
+ * <p>downloadResponse complex typeçš„ Java ç±»ã€‚
  * 
- * <p>ÒÔÏÂÄ£Ê½Æ¬¶ÎÖ¸¶¨°üº¬ÔÚ´ËÀàÖĞµÄÔ¤ÆÚÄÚÈİ¡£
+ * <p>ä»¥ä¸‹æ¨¡å¼ç‰‡æ®µæŒ‡å®šåŒ…å«åœ¨æ­¤ç±»ä¸­çš„é¢„æœŸå†…å®¹ã€‚
  * 
  * <pre>
  * &lt;complexType name="downloadResponse">
@@ -36,7 +36,7 @@ public class DownloadResponse {
     protected TmFileBean _return;
 
     /**
-     * »ñÈ¡returnÊôĞÔµÄÖµ¡£
+     * è·å–returnå±æ€§çš„å€¼ã€‚
      * 
      * @return
      *     possible object is
@@ -48,7 +48,7 @@ public class DownloadResponse {
     }
 
     /**
-     * ÉèÖÃreturnÊôĞÔµÄÖµ¡£
+     * è®¾ç½®returnå±æ€§çš„å€¼ã€‚
      * 
      * @param value
      *     allowed object is

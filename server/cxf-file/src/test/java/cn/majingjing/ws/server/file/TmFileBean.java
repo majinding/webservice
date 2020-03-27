@@ -9,9 +9,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>TmFileBean complex typeµÄ Java Àà¡£
+ * <p>TmFileBean complex typeçš„ Java ç±»ã€‚
  * 
- * <p>ÒÔÏÂÄ£Ê½Æ¬¶ÎÖ¸¶¨°üº¬ÔÚ´ËÀàÖĞµÄÔ¤ÆÚÄÚÈİ¡£
+ * <p>ä»¥ä¸‹æ¨¡å¼ç‰‡æ®µæŒ‡å®šåŒ…å«åœ¨æ­¤ç±»ä¸­çš„é¢„æœŸå†…å®¹ã€‚
  * 
  * <pre>
  * &lt;complexType name="TmFileBean">
@@ -43,7 +43,7 @@ public class TmFileBean {
     protected String fileName;
 
     /**
-     * »ñÈ¡fileÊôĞÔµÄÖµ¡£
+     * è·å–fileå±æ€§çš„å€¼ã€‚
      * 
      * @return
      *     possible object is
@@ -55,7 +55,7 @@ public class TmFileBean {
     }
 
     /**
-     * ÉèÖÃfileÊôĞÔµÄÖµ¡£
+     * è®¾ç½®fileå±æ€§çš„å€¼ã€‚
      * 
      * @param value
      *     allowed object is
@@ -67,7 +67,7 @@ public class TmFileBean {
     }
 
     /**
-     * »ñÈ¡fileExtensionÊôĞÔµÄÖµ¡£
+     * è·å–fileExtensionå±æ€§çš„å€¼ã€‚
      * 
      * @return
      *     possible object is
@@ -79,7 +79,7 @@ public class TmFileBean {
     }
 
     /**
-     * ÉèÖÃfileExtensionÊôĞÔµÄÖµ¡£
+     * è®¾ç½®fileExtensionå±æ€§çš„å€¼ã€‚
      * 
      * @param value
      *     allowed object is
@@ -91,7 +91,7 @@ public class TmFileBean {
     }
 
     /**
-     * »ñÈ¡fileNameÊôĞÔµÄÖµ¡£
+     * è·å–fileNameå±æ€§çš„å€¼ã€‚
      * 
      * @return
      *     possible object is
@@ -103,7 +103,7 @@ public class TmFileBean {
     }
 
     /**
-     * ÉèÖÃfileNameÊôĞÔµÄÖµ¡£
+     * è®¾ç½®fileNameå±æ€§çš„å€¼ã€‚
      * 
      * @param value
      *     allowed object is

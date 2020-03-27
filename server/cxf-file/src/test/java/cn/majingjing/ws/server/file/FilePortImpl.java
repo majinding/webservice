@@ -1,6 +1,7 @@
 
 package cn.majingjing.ws.server.file;
 
+import java.util.List;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
@@ -33,6 +34,20 @@ public interface FilePortImpl {
     @RequestWrapper(localName = "download", targetNamespace = "http://file.server.ws.majingjing.cn/", className = "cn.majingjing.ws.server.file.Download")
     @ResponseWrapper(localName = "downloadResponse", targetNamespace = "http://file.server.ws.majingjing.cn/", className = "cn.majingjing.ws.server.file.DownloadResponse")
     public TmFileBean download();
+
+    /**
+     * 
+     * @param tmFileBeans
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "multiUpload", targetNamespace = "http://file.server.ws.majingjing.cn/", className = "cn.majingjing.ws.server.file.MultiUpload")
+    @ResponseWrapper(localName = "multiUploadResponse", targetNamespace = "http://file.server.ws.majingjing.cn/", className = "cn.majingjing.ws.server.file.MultiUploadResponse")
+    public String multiUpload(
+        @WebParam(name = "tmFileBeans", targetNamespace = "")
+        List<TmFileBean> tmFileBeans);
 
     /**
      * 
