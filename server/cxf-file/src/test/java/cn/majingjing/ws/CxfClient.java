@@ -37,12 +37,12 @@ public class CxfClient {
 
         FilePortImpl fileWS = (FilePortImpl) factory.create();
         List<TmFileBean> tmFileBeans = new ArrayList<>();
-        for (int i = 1; i <= 2; i++) {
+        for (int i = 1; i <= 5; i++) {
             TmFileBean fileWrapper = new TmFileBean();
             fileWrapper.setFileName(i+".txt");
             fileWrapper.setFileExtension("txt");
 
-            String filePath = "/Users/apple/Documents/works/git/oschina/webservice/server/cxf-file/src/test/java/cn/majingjing/ws/server/file/"+i+".txt";
+            String filePath = "/Users/apple/Documents/works/git/oschina/webservice/server/cxf-file/src/test/java/cn/majingjing/ws/server/file/txt/"+i+".txt";
             DataSource source = new FileDataSource(new File(filePath));
             fileWrapper.setFile(new DataHandler(source));
 
