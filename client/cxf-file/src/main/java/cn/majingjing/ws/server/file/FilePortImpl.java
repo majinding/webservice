@@ -26,6 +26,34 @@ public interface FilePortImpl {
 
     /**
      * 
+     * @param tmFileBeans
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "multiUpload2", targetNamespace = "http://file.server.ws.majingjing.cn/", className = "cn.majingjing.ws.server.file.MultiUpload2")
+    @ResponseWrapper(localName = "multiUpload2Response", targetNamespace = "http://file.server.ws.majingjing.cn/", className = "cn.majingjing.ws.server.file.MultiUpload2Response")
+    public String multiUpload2(
+        @WebParam(name = "tmFileBeans", targetNamespace = "")
+        List<TmFileBean> tmFileBeans);
+
+    /**
+     * 
+     * @param tmFileBeanList
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "multiUpload3", targetNamespace = "http://file.server.ws.majingjing.cn/", className = "cn.majingjing.ws.server.file.MultiUpload3")
+    @ResponseWrapper(localName = "multiUpload3Response", targetNamespace = "http://file.server.ws.majingjing.cn/", className = "cn.majingjing.ws.server.file.MultiUpload3Response")
+    public String multiUpload3(
+        @WebParam(name = "tmFileBeanList", targetNamespace = "")
+        TmFileBeanList tmFileBeanList);
+
+    /**
+     * 
      * @return
      *     returns cn.majingjing.ws.server.file.TmFileBean
      */

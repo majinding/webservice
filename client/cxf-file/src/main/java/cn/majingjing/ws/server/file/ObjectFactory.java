@@ -24,12 +24,16 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _MultiUpload2_QNAME = new QName("http://file.server.ws.majingjing.cn/", "multiUpload2");
+    private final static QName _MultiUpload3Response_QNAME = new QName("http://file.server.ws.majingjing.cn/", "multiUpload3Response");
     private final static QName _MultiUploadResponse_QNAME = new QName("http://file.server.ws.majingjing.cn/", "multiUploadResponse");
+    private final static QName _MultiUpload3_QNAME = new QName("http://file.server.ws.majingjing.cn/", "multiUpload3");
     private final static QName _Download_QNAME = new QName("http://file.server.ws.majingjing.cn/", "download");
     private final static QName _MultiUpload_QNAME = new QName("http://file.server.ws.majingjing.cn/", "multiUpload");
     private final static QName _Upload_QNAME = new QName("http://file.server.ws.majingjing.cn/", "upload");
     private final static QName _DownloadResponse_QNAME = new QName("http://file.server.ws.majingjing.cn/", "downloadResponse");
     private final static QName _UploadResponse_QNAME = new QName("http://file.server.ws.majingjing.cn/", "uploadResponse");
+    private final static QName _MultiUpload2Response_QNAME = new QName("http://file.server.ws.majingjing.cn/", "multiUpload2Response");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: cn.majingjing.ws.server.file
@@ -39,11 +43,35 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link MultiUpload2 }
+     * 
+     */
+    public MultiUpload2 createMultiUpload2() {
+        return new MultiUpload2();
+    }
+
+    /**
+     * Create an instance of {@link MultiUpload3Response }
+     * 
+     */
+    public MultiUpload3Response createMultiUpload3Response() {
+        return new MultiUpload3Response();
+    }
+
+    /**
      * Create an instance of {@link MultiUploadResponse }
      * 
      */
     public MultiUploadResponse createMultiUploadResponse() {
         return new MultiUploadResponse();
+    }
+
+    /**
+     * Create an instance of {@link MultiUpload3 }
+     * 
+     */
+    public MultiUpload3 createMultiUpload3() {
+        return new MultiUpload3();
     }
 
     /**
@@ -87,11 +115,45 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link MultiUpload2Response }
+     * 
+     */
+    public MultiUpload2Response createMultiUpload2Response() {
+        return new MultiUpload2Response();
+    }
+
+    /**
      * Create an instance of {@link TmFileBean }
      * 
      */
     public TmFileBean createTmFileBean() {
         return new TmFileBean();
+    }
+
+    /**
+     * Create an instance of {@link TmFileBeanList }
+     * 
+     */
+    public TmFileBeanList createTmFileBeanList() {
+        return new TmFileBeanList();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link MultiUpload2 }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://file.server.ws.majingjing.cn/", name = "multiUpload2")
+    public JAXBElement<MultiUpload2> createMultiUpload2(MultiUpload2 value) {
+        return new JAXBElement<MultiUpload2>(_MultiUpload2_QNAME, MultiUpload2 .class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link MultiUpload3Response }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://file.server.ws.majingjing.cn/", name = "multiUpload3Response")
+    public JAXBElement<MultiUpload3Response> createMultiUpload3Response(MultiUpload3Response value) {
+        return new JAXBElement<MultiUpload3Response>(_MultiUpload3Response_QNAME, MultiUpload3Response.class, null, value);
     }
 
     /**
@@ -101,6 +163,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://file.server.ws.majingjing.cn/", name = "multiUploadResponse")
     public JAXBElement<MultiUploadResponse> createMultiUploadResponse(MultiUploadResponse value) {
         return new JAXBElement<MultiUploadResponse>(_MultiUploadResponse_QNAME, MultiUploadResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link MultiUpload3 }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://file.server.ws.majingjing.cn/", name = "multiUpload3")
+    public JAXBElement<MultiUpload3> createMultiUpload3(MultiUpload3 value) {
+        return new JAXBElement<MultiUpload3>(_MultiUpload3_QNAME, MultiUpload3 .class, null, value);
     }
 
     /**
@@ -146,6 +217,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://file.server.ws.majingjing.cn/", name = "uploadResponse")
     public JAXBElement<UploadResponse> createUploadResponse(UploadResponse value) {
         return new JAXBElement<UploadResponse>(_UploadResponse_QNAME, UploadResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link MultiUpload2Response }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://file.server.ws.majingjing.cn/", name = "multiUpload2Response")
+    public JAXBElement<MultiUpload2Response> createMultiUpload2Response(MultiUpload2Response value) {
+        return new JAXBElement<MultiUpload2Response>(_MultiUpload2Response_QNAME, MultiUpload2Response.class, null, value);
     }
 
 }

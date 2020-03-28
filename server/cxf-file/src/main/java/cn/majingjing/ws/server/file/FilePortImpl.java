@@ -30,6 +30,7 @@ import java.util.UUID;
 public class FilePortImpl {
 
     private static Logger log = LoggerFactory.getLogger(FilePortImpl.class);
+
     /**
      * 文件上传
      *
@@ -40,13 +41,13 @@ public class FilePortImpl {
         log.info("multiUpload start ...");
         try {
             for (TmFileBean tmFileBean : tmFileBeans) {
-                Thread t =  new Thread(() -> {
+                Thread t = new Thread(() -> {
                     try {
-                        log.info("upload... {}",tmFileBean.getFileName());
-                        tmFileBean.getFile().writeTo(new FileOutputStream("/Users/apple/Documents/works/git/oschina/webservice/server/cxf-file/target/"+ UUID.randomUUID().toString()+tmFileBean.getFileName()));
+                        log.info("upload... {}", tmFileBean.getFileName());
+                        tmFileBean.getFile().writeTo(new FileOutputStream("/Users/apple/Documents/works/git/oschina/webservice/server/cxf-file/target/" + UUID.randomUUID().toString() + tmFileBean.getFileName()));
                         String rtn = Tools.toStrings("文件上传成功，文件名：{}", tmFileBean.getFileName());
                         System.out.println(rtn);
-                      //  Thread.sleep(500L);
+                        //  Thread.sleep(500L);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -67,32 +68,18 @@ public class FilePortImpl {
     }
 
     public String multiUpload2(@WebParam(name = "tmFileBeans") List<TmFileBean> tmFileBeans) {
-        log.info("multiUpload start ...");
         try {
-            for (TmFileBean tmFileBean : tmFileBeans) {
-                new Thread(() -> {
-                    try {
-                        log.info("upload... {}",tmFileBean.getFileName());
-                        tmFileBean.getFile().writeTo(new FileOutputStream("/Users/apple/Documents/works/git/oschina/webservice/server/cxf-file/target/"+ UUID.randomUUID().toString()+tmFileBean.getFileName()));
-                        String rtn = Tools.toStrings("文件上传成功，文件名：{}", tmFileBean.getFileName());
-                        System.out.println(rtn);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-
-                }).start();
-            }
-            log.info("multiUpload end ...");
-
+            log.info("multiUpload start ...");
             StringBuilder rtns = new StringBuilder();
             for (TmFileBean tmFileBean : tmFileBeans) {
-                log.info("upload... {}",tmFileBean.getFileName());
-                tmFileBean.getFile().writeTo(new FileOutputStream("/Users/apple/Documents/works/git/oschina/webservice/server/cxf-file/target/"+ UUID.randomUUID().toString()+tmFileBean.getFileName()));
+                log.info("upload... {}", tmFileBean.getFileName());
+                tmFileBean.getFile().writeTo(new FileOutputStream("/Users/apple/Documents/works/git/oschina/webservice/server/cxf-file/target/" + UUID.randomUUID().toString() + tmFileBean.getFileName()));
                 String rtn = Tools.toStrings("文件上传成功，文件名：{}", tmFileBean.getFileName());
                 rtns.append(rtn).append("\n");
             }
 
             log.debug(rtns.toString());
+            log.info("multiUpload end ...");
             return rtns.toString();
         } catch (Exception e) {
             log.error("上传文件失败", e);
@@ -100,6 +87,28 @@ public class FilePortImpl {
 
         return "文件上传失败，请联系管理员。";
     }
+
+    public String multiUpload3(@WebParam(name = "tmFileBeanList") TmFileBeanList d) {
+        try {
+            log.info("multiUpload start ...");
+            StringBuilder rtns = new StringBuilder();
+            for (TmFileBean tmFileBean : d.getList()) {
+                log.info("upload... {}", tmFileBean.getFileName());
+                tmFileBean.getFile().writeTo(new FileOutputStream("/Users/apple/Documents/works/git/oschina/webservice/server/cxf-file/target/" + UUID.randomUUID().toString() + tmFileBean.getFileName()));
+                String rtn = Tools.toStrings("文件上传成功，文件名：{}", tmFileBean.getFileName());
+                rtns.append(rtn).append("\n");
+            }
+
+            log.debug(rtns.toString());
+            log.info("multiUpload end ...");
+            return rtns.toString();
+        } catch (Exception e) {
+            log.error("上传文件失败", e);
+        }
+
+        return "文件上传失败，请联系管理员。";
+    }
+
     /**
      * 文件上传
      *
@@ -110,8 +119,8 @@ public class FilePortImpl {
 
         InputStream is = null;
         try {
-            log.info("upload... {}",tmFileBean.getFileName());
-            tmFileBean.getFile().writeTo(new FileOutputStream("F:\\tmp\\"+ UUID.randomUUID().toString()+tmFileBean.getFileName()));
+            log.info("upload... {}", tmFileBean.getFileName());
+            tmFileBean.getFile().writeTo(new FileOutputStream("F:\\tmp\\" + UUID.randomUUID().toString() + tmFileBean.getFileName()));
             String rtn = Tools.toStrings("文件上传成功，文件名：{}", tmFileBean.getFileName());
             log.debug(rtn);
             return rtn;
